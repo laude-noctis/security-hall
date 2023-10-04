@@ -1,17 +1,59 @@
-let PassPrompt = passwordPrompt()
-let lowercase = "abcdefghijklmnopqrstuvwxyz";
-let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-let special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
+var passPrompt
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+var special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
+
+// var lowercasePrompt = window.confirm('Include lowercase letters?');
+// if(lowercasePrompt) {
+//   storeCharacters.push(lowercase)
+// }
+
+// var uppercasePrompt = window.confirm('Include uppercase letters?');
+// if(uppercasePrompt) {
+//  storeCharacters.push(uppercase)
+// }
+
+// var specialPrompt = window.confirm('Include special characters?');
+// if (specialPrompt) {
+//   storeCharacters.push(special)
+// }
+
+// var numericPrompt = window.confirm('Include numeric values?');
+// if (numericPrompt) {
+//   storeCharacters.push(numeric)
+// }  
+// var storeCharacters= [ ]
 
 // Assignment code here
 function generatePassword() {
-  passwordPrompt()
-  charactersLowercase()
-  charactersUppercase()
-  charactersNumeric()
-  charactersSpecial()
-}
+  passwordPrompt();
+  lowercasePrompt;
+  uppercasePrompt;
+  specialPrompt;
+  numericPrompt;
+  
+  var lowercasePrompt = window.confirm('Include lowercase letters?');
+  if(lowercasePrompt) {
+    storeCharacters.push(lowercase)
+  }
+
+  var uppercasePrompt = window.confirm('Include uppercase letters?');
+  if(uppercasePrompt) {
+  storeCharacters.push(uppercase)
+  }
+
+  var specialPrompt = window.confirm('Include special characters?');
+  if (specialPrompt) {
+    storeCharacters.push(special)
+  }
+
+  var numericPrompt = window.confirm('Include numeric values?');
+  if (numericPrompt) {
+    storeCharacters.push(numeric)
+  }  
+  var storeCharacters= [ ]
+  }
 
 function passwordPrompt() {
   passPrompt = prompt('How many characters long?'); {
@@ -23,48 +65,6 @@ function passwordPrompt() {
     }
   }
 }
-
-function charactersLowercase() {
-  lowercase = window.confirm('Include lowercase letters?'); {
-    if (true) {
-      lowercase   
-    } else {
-      false
-    }
-  }
-}
-
-function charactersUppercase() {
-  uppercase = window.confirm('Include uppercase letters?'); {
-    if (true) {
-      uppercase   
-    } else {
-      false
-    }
-  }
-}
-
-function charactersNumeric() {
-  numeric = window.confirm('Include numeric values?'); {
-    if (true) {
-      numeric   
-    } else {
-      false
-    }
-  }
-}
-
-function charactersSpecial() {
-  special = window.confirm('Include special characters?'); {
-    if (true) {
-      special   
-    } else {
-      false
-    }
-  }
-}
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
