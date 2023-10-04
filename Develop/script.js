@@ -4,7 +4,6 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "_", "`", "{", "|", "}", "~"]
 var storeCharacters = []
-var retVal = ""
 
 function generatePassword() {
   passwordPrompt()
@@ -28,11 +27,10 @@ function generatePassword() {
     storeCharacters.push(numeric)
   }
 
-  password = "";
-  for (var i = 0, n = storeCharacters.length; i < length; ++i) {
-    retVal += storeCharacters.charAt(Math.floor(Math.random() * n));
-    return password;
-  }
+  for (var i = 0, n = charset.length; i < length; ++i) {
+  retVal += charset.charAt(Math.floor(Math.random() * n));
+}
+  return document.querySelector("#password")
 }
 
 function passwordPrompt() {
