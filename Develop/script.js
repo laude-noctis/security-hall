@@ -4,35 +4,9 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
 
-// var lowercasePrompt = window.confirm('Include lowercase letters?');
-// if(lowercasePrompt) {
-//   storeCharacters.push(lowercase)
-// }
-
-// var uppercasePrompt = window.confirm('Include uppercase letters?');
-// if(uppercasePrompt) {
-//  storeCharacters.push(uppercase)
-// }
-
-// var specialPrompt = window.confirm('Include special characters?');
-// if (specialPrompt) {
-//   storeCharacters.push(special)
-// }
-
-// var numericPrompt = window.confirm('Include numeric values?');
-// if (numericPrompt) {
-//   storeCharacters.push(numeric)
-// }  
-// var storeCharacters= [ ]
-
 // Assignment code here
 function generatePassword() {
-  passwordPrompt();
-  lowercasePrompt;
-  uppercasePrompt;
-  specialPrompt;
-  numericPrompt;
-  
+  passwordPrompt()
   var lowercasePrompt = window.confirm('Include lowercase letters?');
   if(lowercasePrompt) {
     storeCharacters.push(lowercase)
@@ -51,9 +25,8 @@ function generatePassword() {
   var numericPrompt = window.confirm('Include numeric values?');
   if (numericPrompt) {
     storeCharacters.push(numeric)
-  }  
-  var storeCharacters= [ ]
   }
+}
 
 function passwordPrompt() {
   passPrompt = prompt('How many characters long?'); {
