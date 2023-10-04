@@ -3,7 +3,13 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
-
+  var charSets = {
+ passwordPrompt;
+  lowercase,
+  uppercase,
+  numeric,
+  special
+  }
 // Assignment code here
 function generatePassword() {
   passwordPrompt()
@@ -11,11 +17,16 @@ function generatePassword() {
   charactersUppercase()
   charactersNumeric()
   charactersSpecial()
+
+
+  // };
+  // var charSet = charSets[charType.toLowerCase()] || charSets.lowercase;
+  // var retVal = "";
+  // for (var i = 0; i < length; i++) {
+  //   retVal += charSets.charAt(Math.floor(Math.random() * charSets.length));
+  // }
+  // return retVal;
 }
-
-
-
-
 
 
 function passwordPrompt() {
