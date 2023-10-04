@@ -1,10 +1,10 @@
 var passPrompt
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
+var uppercase = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
 var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 var special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
+var storeCharacters = [ ]
 
-// Assignment code here
 function generatePassword() {
   passwordPrompt()
   var lowercasePrompt = window.confirm('Include lowercase letters?');
@@ -14,7 +14,7 @@ function generatePassword() {
 
   var uppercasePrompt = window.confirm('Include uppercase letters?');
   if(uppercasePrompt) {
-  storeCharacters.push(uppercase)
+    storeCharacters.push(uppercase)
   }
 
   var specialPrompt = window.confirm('Include special characters?');
