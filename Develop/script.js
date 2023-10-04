@@ -1,9 +1,10 @@
 var passPrompt
-var lowercase = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
-var uppercase = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-var special = "!#$%&'()*+,-./:;<=>?@ []^_`{|}~"
-var storeCharacters = [ ]
+var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "_", "`", "{", "|", "}", "~"]
+var storeCharacters = []
+var retVal = ""
 
 function generatePassword() {
   passwordPrompt()
@@ -25,6 +26,12 @@ function generatePassword() {
   var numericPrompt = window.confirm('Include numeric values?');
   if (numericPrompt) {
     storeCharacters.push(numeric)
+  }
+
+  password = "";
+  for (var i = 0, n = storeCharacters.length; i < length; ++i) {
+    retVal += storeCharacters.charAt(Math.floor(Math.random() * n));
+    return password;
   }
 }
 
