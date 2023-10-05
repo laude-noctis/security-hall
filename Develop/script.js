@@ -4,7 +4,6 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "_", "`", "{", "|", "}", "~"]
 var storeCharacters = []
-var retVal = ""
 
 function generatePassword() {
   passwordPrompt()
@@ -36,14 +35,18 @@ function generatePassword() {
     }
   }
 
-  for (var n = 0; n = storeCharacters.length; ++n) {
-    // retVal += storeCharacters[n]
-    // console.log(Math.floor(Math.random() * n))
+  for (let i = storeCharacters.length - 1; i > 0; i--) {
+    // pick a random index from 0 to i inclusive
+    const j = Math.floor(Math.random() * (i + 1)); // at random index
+    // Swap storeCharacteers[i] with the element
+    [storeCharacters[i], storeCharacters[j]] = [storeCharacters[j], storeCharacters[i]];
   }
-  console.log(storeCharacters)
-  console.log(retVal)
+
+  let randomCharacterArray = storeCharacters.slice(0, passPrompt)
+
+  console.log(randomCharacterArray)
   // this needs to be fixed because we dont want the 0 index
-  return document.querySelector("#password").value = storeCharacters[0]
+  return document.querySelector("#password").value = randomCharacterArray.toString().replace(/,/g, "")
 }
 
 function passwordPrompt() {
