@@ -2,7 +2,7 @@
 
 ## Description
 
-This code is created to help people create a randomized password with certain criterias to make the password more secure.
+This code is created to help people create a randomized password with certain criterias to make the password more secure. It uses JavaScript to accept the criteria and randomize the password.
 Website: https://lizziebumpers.github.io/security-hall/
 
 ## Credits
