@@ -36,16 +36,13 @@ function generatePassword() {
   }
 
   for (let i = storeCharacters.length - 1; i > 0; i--) {
-    // pick a random index from 0 to i inclusive
-    const j = Math.floor(Math.random() * (i + 1)); // at random index
-    // Swap storeCharacteers[i] with the element
+    const j = Math.floor(Math.random() * (i + 1));
     [storeCharacters[i], storeCharacters[j]] = [storeCharacters[j], storeCharacters[i]];
   }
 
   let randomCharacterArray = storeCharacters.slice(0, passPrompt)
 
   console.log(randomCharacterArray)
-  // this needs to be fixed because we dont want the 0 index
   return document.querySelector("#password").value = randomCharacterArray.toString().replace(/,/g, "")
 }
 
