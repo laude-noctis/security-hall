@@ -6,8 +6,8 @@ var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", 
 
 function generatePassword() {
   var storeCharacters = []
-
   passwordPrompt()
+
   var lowercasePrompt = window.confirm('Include lowercase letters?');
   if (lowercasePrompt) {
     for (let i = 0; i < lowercase.length; ++i) {
@@ -40,22 +40,28 @@ function generatePassword() {
     const j = Math.floor(Math.random() * (i + 1));
     [storeCharacters[i], storeCharacters[j]] = [storeCharacters[j], storeCharacters[i]];
   }
-
-  let randomCharacterArray = storeCharacters.slice(0, passPrompt)
-
-  console.log(randomCharacterArray)
-  return document.querySelector("#password").value = randomCharacterArray.toString().replace(/,/g, "")
+  
+  let randomCharacterArray = [];
+  
+  while (randomCharacterArray.length < passPrompt) {
+    randomCharacterArray.push(storeCharacters[Math.floor(Math.random() * storeCharacters.length)]);
+  }
+  
+  console.log(randomCharacterArray);
+  console.log(randomCharacterArray.length);
+  
+  return document.querySelector("#password").value = randomCharacterArray.join("");
 }
 
 function passwordPrompt() {
-  passPrompt = prompt('How many characters long?'); {
-    if (passPrompt >= 8 && passPrompt <= 128) {
-      return;
-    } else {
-      (window.alert('Password length must be between 8-128 characters long.'));
-      passwordPrompt();
-    }
+  passPrompt = prompt('How many characters long?');
+  if (passPrompt >= 8 && passPrompt <= 128) {
+    return;
+  } else {
+    (window.alert('Password length must be between 8-128 characters long.'));
+    passwordPrompt();
   }
+
 }
 
 // Get references to the #generate element
